@@ -8,7 +8,7 @@ NetEvents:Subscribe("vu-ks-grenades:Success",function()
 	Events:Dispatch("Killstreak:usedStep",curStep)
 end)
 
-Events:Subscribe("vu-ks-grenades:Invoke",function(stepNr,keyboardKey)
+Events:Subscribe("vu-ks-grenades:Invoke",function(stepNr)
 	print("Killstreak enabled")
 	curStep = stepNr
 	NetEvents:SendLocal("vu-ks-grenades:Launch")

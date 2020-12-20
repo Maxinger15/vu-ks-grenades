@@ -6,6 +6,7 @@ NetEvents:Subscribe(
 		local weaponsComponent = player.soldier.weaponsComponent
 		SoldierWeapon(weaponsComponent.weapons[7]).secondaryAmmo =
 		SoldierWeapon(weaponsComponent.weapons[7]).secondaryAmmo + 2
+		NetEvents:SendTo("Killstreak:showNotification",player, json.encode({title="Grenades",message="Resupply arrived"}))
 		NetEvents:SendToLocal("vu-ks-grenades:Success",player)
 	end
 )
